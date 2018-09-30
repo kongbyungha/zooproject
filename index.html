@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>zoo-project</title>
+    <style type="text/css">
+        body{background:black; text-align: center;}
+
+        #zoo{position:relative; height:720px;
+             background:url('zoo.png');
+             background-size:cover;}
+
+        #seaBut{margin:auto; margin-top:0px;
+                width:300px; height:300px;
+                transition: all 1s;
+                background: url('바다거북.png');
+                animation: a 5s infinite ;
+                animation-play-state: paused;}
+        #mouBut{margin:auto; margin-top:0px;
+                width:300px; height:300px;
+                transition: all 1s;
+                background: url('눈표범.png');
+                animation: a 5s infinite ;
+                animation-play-state: paused;}
+        #snoBut{margin:auto; margin-top:0px;
+                width:300px; height:300px;
+                transition: all 1s;
+                background: url('펭귄.png');
+                animation: a 5s infinite ;
+                animation-play-state: paused;}
+        @keyframes a{
+            from{margin-top:0px;}
+            to{margin-top:0pX;
+            transform: rotate3D(0,1,0,360deg);
+            opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="zoo"></div>
+
+    <div id="seaBut"></div>
+    <div id="mouBut"></div>
+    <div id="snoBut"></div>
+
+    <audio id="strawMusic">
+        <source src="straw.mp4" type="audio/mpeg">
+    </audio>
+    <audio id="hotMusic">
+        <source src="hot.mp4" type="audio/mpeg">
+    </audio>
+    <audio id="gunMusic">
+        <source src="gun.mp4" type="audio/mpeg">
+    </audio>
+
+    <video id="tVideo">
+        <source src="lala.mp4" type="video/mp4">
+    </video>
+    <video id="tVideo2">
+            <source src="lala2.mp4" type="video/mp4">
+    </video>
+
+    <script type="text/javascript">
+
+        seaBut.onmouseover = function(){
+            seaBut.style.animationPlayState = "running";
+            snoBut.style.animationPlayState = "paused";
+            mouBut.style.animationPlayState = "paused";
+            }
+        seaBut.onclick = function(){
+            tVideo.play();
+            tVideo2.paused();
+            }
+        mouBut.onmouseover = function(){
+            mouBut.style.animationPlayState = "running"
+            seaBut.style.animationPlayState = "paused";
+            snoBut.style.animationPlayState = "paused";
+            }
+        mouBut.onclick = function(){
+            tVideo2.play();
+            tVideo.paused();
+            }
+        snoBut.onmouseover = function(){
+            zoo.style.background="url('snow.jpg')";
+            zoo.style.backgroundSize = "cover";
+            snoBut.style.animationPlayState = "running"
+            seaBut.style.animationPlayState = "paused";
+            mouBut.style.animationPlayState = "paused";
+            }
+        snoBut.onclick = function(){
+            hotMusic.play();
+            tVideo.paused();
+            tVideo2.paused();
+            }
+
+    </script>
+</body>
+</html>
